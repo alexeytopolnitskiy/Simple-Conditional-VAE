@@ -1,1 +1,1 @@
-# Simple-Conditional-VAE
+# Simple implementation of Conditional VAE
