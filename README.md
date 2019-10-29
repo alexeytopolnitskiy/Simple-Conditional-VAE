@@ -16,3 +16,8 @@ The model was taught on MNIST dataset, which can be obtained as:
 ```bash
 torchvision.datasets.MNIST
 ```
+
+## Results
+
+For demonstration 10 random digits were generated
+<p align="center"><img src="10_random_digits.png" width="480"></p>
