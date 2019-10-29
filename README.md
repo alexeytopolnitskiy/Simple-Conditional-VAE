@@ -10,6 +10,9 @@ To install all requirement packages, run the command:
 pip install -r requirements.txt
 ```
 
+## How to use
+The **Conditional Variational Autoencoder** (CVAE) is a an algorithm to generate certain image (e.g. generation of the digit image of given label) from the latent space
+
 ### Datasets
 
 The model was taught on MNIST dataset, which can be obtained as:
