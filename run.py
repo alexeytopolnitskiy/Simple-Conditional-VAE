@@ -73,5 +73,3 @@ for epoch in tqdm.tqdm(range(n_epochs)):
       test_loss += loss.item()
       
   print('Epoch is {}. Train loss = {}. Test loss = {}'.format(epoch, train_loss/len(train_dataset), test_loss/len(test_dataset))) 
-
-
