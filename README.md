@@ -7,7 +7,7 @@ This my simple implementation of [Conditional Variational Autoencoder for Neural
 The project is built on top of Pytorch 	`1.3.0`.
 To install all requirement packages, run the command:
 ```bash
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 
 ### Datasets
