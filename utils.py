@@ -1,6 +1,6 @@
 import torch
 import matplotlib.pyplot as plt
-%matplotlib inline
+import utils
 
 def y_to_onehot(y, batch_size, n):
       
@@ -11,7 +11,7 @@ def y_to_onehot(y, batch_size, n):
   
     return y_onehot
 
-def plot(n_images, h, l, num_of_classes):
+def plot(model, n_images, h, l, num_of_classes):
 
     fig, axes = plt.subplots(h, l, figsize=(l*3, h*3))
 
@@ -20,7 +20,7 @@ def plot(n_images, h, l, num_of_classes):
         for j in range(l):
         
             y = torch.randint(0, num_of_classes, (1, 1)).to(dtype=torch.long)
-            y_hot = y_to_onehot(y, 1, num_of_classes).to(device)
+            y_hot = utils.y_to_onehot(y, 1, num_of_classes)
             new_image = model.generate_x(y_hot)
             new_image = new_image.view(28, 28).data
             axes[i][j].imshow(new_image.cpu(), cmap='gray')
@@ -28,5 +28,5 @@ def plot(n_images, h, l, num_of_classes):
             axes[i][j].set_xticks(())
             axes[i][j].set_title('Generated {}'.format(y.item()))
 
-    plt.show()
-    plt.savefig('10_random_di.png')
+    plt.show();
+    # plt.savefig('10_random_digits.png')
