@@ -5,8 +5,10 @@ from torchvision import datasets, transforms
 from torch.autograd import Variable
 from torch.utils.data import TensorDataset, DataLoader, Dataset
 import tqdm
+from models import CVAE
+import utils
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 n_epochs = 15
 batch_size = 20
@@ -49,7 +51,7 @@ for epoch in tqdm.tqdm(range(n_epochs)):
   for x, y in train_dataloader:
     
     x = x.view(-1, input_size).to(device)
-    y = y_to_onehot(y, batch_size, num_of_classes).to(device)
+    y = utils.y_to_onehot(y, batch_size, num_of_classes).to(device)
     
     optimizer.zero_grad()
     x_mu, x_logvar, z, z_mu, z_logvar = model(x, y)
@@ -66,7 +68,7 @@ for epoch in tqdm.tqdm(range(n_epochs)):
     for x, y in test_dataloader:
     
       x = x.view(-1, input_size).to(device)
-      y = y_to_onehot(y, batch_size, num_of_classes).to(device)
+      y = utils.y_to_onehot(y, batch_size, num_of_classes).to(device)
 
       x_mu, x_logvar, z, z_mu, z_logvar = model(x, y)
       loss = model.loss_calc(x, x_mu, z_mu, z_logvar)
