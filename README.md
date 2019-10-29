@@ -20,4 +20,4 @@ torchvision.datasets.MNIST
 ## Results
 
 For demonstration 10 random digits were generated
-<p align="center"><img src="10_random_digits.png" width="480"></p>
+<p align="center"><img src="10_random_digits.png"></p>
