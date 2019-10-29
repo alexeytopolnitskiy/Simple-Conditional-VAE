@@ -1,5 +1,6 @@
 import torch
 import matplotlib.pyplot as plt
+%matplotlib inline
 
 def y_to_onehot(y, batch_size, n):
       
